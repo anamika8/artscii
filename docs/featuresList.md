@@ -4,8 +4,7 @@
 - Access API to return gif
 - Transform gif into ascii version
 - 3D output
-- Shareable as node module
-- Shareable as python module
+- Shareable as PyPI or NPM-JS module
 - Available as a web app
 - Responsive design (web & mobile)
 - Attractive user interface
