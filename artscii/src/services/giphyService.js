@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const GIPHY_API_KEY = `7bcbIq6rDmXAuPqfDLaa1TrL7dN0q47w`;
+const GIPHY_API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 const DEFAULT_IMAGE_TO_SHOW = `https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif`;
 
 // public function that can be called by the UI or other services
