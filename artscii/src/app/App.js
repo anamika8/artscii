@@ -1,16 +1,19 @@
 import './App.css';
-import Header from '../components/header/Header';
+import Header from '../components/header/Header'
+import Main from '../components/main/Main';
+import About from '../components/about/About';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
-
-	return (
-        	<div className="App">
-        	<Header />
-        	<img className='placeholder-gif' src='https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif' alt="placeholder-gif"/>
-        	<p>Site under construction.</p>
-        	</div>
-    	);
-
+  return (
+    <div className="App">
+		<Header/>
+		<Routes>
+			<Route exact path='/' element={<Main/>}/>
+			<Route exact path='/about' element={<About/>}/>
+		</Routes>
+    </div>
+  );
 }
 
 export default App;
