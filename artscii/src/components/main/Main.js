@@ -25,6 +25,7 @@ function Main() {
 			<div className='input-form'>
 				<form onSubmit={e => handleSubmit(e)}>
 					<input 
+                        className='search-input'
 						type='text'
 						value={searchParam}
 						placeholder="Enter a search term"
