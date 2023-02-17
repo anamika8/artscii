@@ -1,9 +1,12 @@
 import './Main.css';
+import Player from '../player/Player';
 import { useState } from 'react';
 
 function Main() {
     const [searchParam, setSearchParam] = useState('');
 	const [displayText, setDisplayText] = useState('');
+	const [url, setUrl] = useState('https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif')
+	const [playerMode, setPlayerMode] = useState('image')
 
 	const updateTitle = (param) => {
 		setDisplayText(param)
@@ -15,12 +18,18 @@ function Main() {
 		e.preventDefault();
 	}
 	
+	const updatePlayerData = (new_url, new_search, new_playerMode) => {
+		setUrl(new_url);
+		setSearchParam(new_search);
+		setPlayerMode(new_playerMode);
+	}
+
     return (
         <div className='main'>
             <h2>Searching for:</h2>
 			<h2>{displayText}</h2>
-            <img className='placeholder-gif' src='https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif' alt="placeholder-gif"/>
-         	<p>Site under construction.</p>
+			<Player url={url} search={searchParam} playerMode={playerMode}/>
+			<p>Site under construction.</p>
 
 			<div className='input-form'>
 				<form onSubmit={e => handleSubmit(e)}>

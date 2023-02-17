@@ -1,0 +1,26 @@
+:root {  
+    --content-width: 480px;
+    --content-height: 360px;
+}
+
+.player-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+.image-display {
+    width: var(--content-width);
+    height: var(--content-height);
+}
+
+.video-display {
+    width: var(--content-width);
+    height: var(--content-height);
+}
+
+.title-text {
+    display: none
+}
