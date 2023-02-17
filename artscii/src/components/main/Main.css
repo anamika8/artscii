@@ -3,3 +3,13 @@
     width: 480px;
     height: 360px;
 }
+
+.search-input {
+    height: 2em;
+    width: 20em;
+    margin: 2em;
+}
+
+h2 {
+    height: 1em;
+}
