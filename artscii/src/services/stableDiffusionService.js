@@ -34,7 +34,7 @@ export async function getStableDiffusionImageBySearchText(searchText = "",
     return image;
 }
 
-// function to call the Giphy API
+// function to call the Stable Diffusion API
 async function callStableDiffusionWithPrompt(encodedParams) {
     console.log(`Using API key - ${STABLE_DIFFUSION_API_KEY}`)
     const options = {
