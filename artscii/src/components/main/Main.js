@@ -38,39 +38,30 @@ function Main() {
             });
     }
 
-    return ( <
-        div className = 'main' >
-        <
-        h2 > Searching
-        for: < /h2> <
-        h2 > { displayText } < /h2> <
-        Player url = { url }
-        /*adding this line to test if api call is working
-        Player url = { imageUrl }*/
-        search = { searchParam }
-        playerMode = { playerMode }
-        /> <
-        p > Site under construction. < /p>
 
-        <
-        div className = 'input-form' >
-        <
-        form onSubmit = { e => handleSubmit(e) } >
-        <
-        input className = 'search-input'
-        type = 'text'
-        value = { searchParam }
-        placeholder = "Enter a search term"
-        onChange = { e => setSearchParam(e.target.value) }
-        /> <
-        input type = 'submit'
-        value = 'Submit' /
-        >
-        <
-        /form> < /
-        div > <
-        /div>
-    );
+  return (
+      <div className='main'>
+          <h2>Searching for:</h2>
+          <h2>{displayText}</h2>
+          <Player url={url} search={searchParam} playerMode={playerMode}/>
+          <p>Site under construction.</p>
+  
+          <div className='input-form'>
+              <form onSubmit={e => handleSubmit(e)}>
+                  <input 
+                      className='search-input'
+                      type='text'
+                      value={searchParam}
+                      placeholder="Enter a search term"
+                      onChange={e => setSearchParam(e.target.value)}
+                  />
+                  <input 
+                      type='submit'
+                      value='Submit'
+                  />
+              </form>
+          </div>
+      </div>
+  );
 };
-
 export default Main;
