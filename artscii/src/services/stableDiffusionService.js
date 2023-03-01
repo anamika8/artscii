@@ -36,7 +36,6 @@ export async function getStableDiffusionImageBySearchText(searchText = "",
 
 // function to call the Stable Diffusion API
 async function callStableDiffusionWithPrompt(encodedParams) {
-    console.log(`Using API key - ${STABLE_DIFFUSION_API_KEY}`)
     const options = {
         method: 'POST',
         url: DEZGO_HOST_URL,
