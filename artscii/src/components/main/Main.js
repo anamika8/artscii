@@ -1,4 +1,5 @@
 import './Main.css';
+import loading_gif from '../../assets/loading.gif';
 import Player from '../player/Player';
 import { useState } from 'react';
 import { getStableDiffusionImageBySearchText } from '../../services/stableDiffusionService';
@@ -6,9 +7,9 @@ import { getStableDiffusionImageBySearchText } from '../../services/stableDiffus
 function Main() {
     const [searchParam, setSearchParam] = useState('');
     const [displayText, setDisplayText] = useState('');
-    const [url, setUrl] = useState('https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif')
     const [playerMode, setPlayerMode] = useState('image')
-    const [imageUrl, setImageUrl] = useState('')
+    const [imageUrl, setImageUrl] = useState('https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif')
+    const [loading, setLoading] = useState(false)
 
     const updateTitle = (param) => {
         setDisplayText(param)
@@ -18,11 +19,12 @@ function Main() {
     const handleSubmit = (e) => {
         updateTitle(searchParam)
         setApiImage(searchParam);
+        setLoading(true);
         e.preventDefault();
     }
 
     const updatePlayerData = (new_url, new_search, new_playerMode) => {
-        setUrl(new_url);
+        setImageUrl(new_url);
         setSearchParam(new_search);
         setPlayerMode(new_playerMode);
     }
@@ -35,6 +37,9 @@ function Main() {
             })
             .catch(err => {
                 console.log("error encountered = " + err);
+            })
+            .finally(() => {
+                setLoading(false);
             });
     }
 
@@ -43,7 +48,11 @@ function Main() {
       <div className='main'>
           <h2>Searching for:</h2>
           <h2>{displayText}</h2>
-          <Player url={url} search={searchParam} playerMode={playerMode}/>
+          {loading ? (
+            <Player url={loading_gif} playerMode={playerMode} />
+          ) : (
+            <Player url={imageUrl} search={searchParam} playerMode={playerMode}/>
+          )}
           <p>Site under construction.</p>
   
           <div className='input-form'>
