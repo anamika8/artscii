@@ -2,10 +2,6 @@ import React from 'react';
 import './display.css'
 import { validateDisplayManagerProps } from './validateDisplayManagerProps';
 
-// DisplayManager component to display URL, base64 encoded PNG and ASCII art to the app
-// props: 
-//  (string) src: url to image, base64 blob or ASCII
-//  (string) displayMode: either url, rawImg or ascii
 const DisplayManager = (props) => {
     try {
         validateDisplayManagerProps(props)
@@ -13,13 +9,13 @@ const DisplayManager = (props) => {
             case 'image':
                 return(
                     <div className='display-window'>
-                        <ImageDisplay src={props.src} search={props.search}/>
+                        <ImageDisplay src={props.src} search={props.search} asciify={props.asciify} setDisplayMode={props.setDisplayMode}/>
                     </div>
                 );
             case 'ascii':
                 return(
                     <div className='display-window'>
-                        <AsciiDisplay src={props.src} search={props.search}/>
+                        <AsciiDisplay src={props.src} search={props.search} preData={props.preData} />
                     </div>
                 )
             default:
@@ -40,13 +36,16 @@ const ImageDisplay = (props) => {
         <div className='player-window'>
             <h2 className='title-text'>{props.search}</h2>
             <img src={props.src} alt={props.search} className="image-display"/>
+            <button className='ascii-button' onClick={props.asciify}>asciify</button>
         </div>
     )
 }
 
 const AsciiDisplay = (props) => {
     return(
-        <h2>I haven't written this yet. It's on the way!</h2>
+        <div>
+            <pre id='ascii'>{props.preData}</pre>
+        </div>
     )
 }
 

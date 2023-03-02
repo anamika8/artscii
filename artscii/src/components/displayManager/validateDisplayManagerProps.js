@@ -1,4 +1,4 @@
-// Function to validate props passed to the Display componeont. Throws errors for Display to catch
+// Function to validate props passed to the Player componeont. Throws errors for Player to catch
 
 export function validateDisplayManagerProps (props) {
     let validModes = ['image', 'ascii']

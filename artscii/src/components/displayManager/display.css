@@ -1,4 +1,4 @@
-:root {  
+:root {
     --content-width: 512px;
     --content-height: 512px;
 }
@@ -22,4 +22,19 @@
 
 .title-text {
     display: none
+}
+
+.ascii-button {
+    margin: 1em;
+}
+
+pre {
+    font-family: 'Courier New', 'monospace';
+    margin: 1rem auto;
+    font-size: 4px;
+    line-height: 1;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    max-width: 617px;
 }

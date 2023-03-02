@@ -24,7 +24,6 @@ export async function getStableDiffusionImageBySearchText(searchText = "",
     encodedParams.append("prompt", searchText);
     encodedParams.append("model", model);
     encodedParams.append("guidance", guidance);
-
     // getting the response from Dezgo API
     const imageBase64 = await callStableDiffusionWithPrompt(encodedParams);
     if (imageBase64 === undefined) {
@@ -34,7 +33,6 @@ export async function getStableDiffusionImageBySearchText(searchText = "",
     var image = `data:image/png;base64, ${imageBase64}`;
     return image;
 }
-
 // function to call the Stable Diffusion API
 async function callStableDiffusionWithPrompt(encodedParams) {
     const options = {

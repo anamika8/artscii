@@ -13,3 +13,8 @@
 h2 {
     height: 1em;
 }
+
+.canvas {
+    position: absolute;
+    top: -500px;
+}
