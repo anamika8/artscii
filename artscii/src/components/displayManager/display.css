@@ -1,6 +1,6 @@
 :root {  
-    --content-width: 480px;
-    --content-height: 360px;
+    --content-width: 512px;
+    --content-height: 512px;
 }
 
 .player-window {
@@ -8,7 +8,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 50px;
 }
 
 .image-display {

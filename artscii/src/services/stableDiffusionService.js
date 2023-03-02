@@ -1,8 +1,9 @@
 import axios from "axios";
+import home_gif from '../assets/home.gif'
 let Buffer = require('buffer').Buffer
 
 const STABLE_DIFFUSION_API_KEY = process.env.REACT_APP_STABLE_DIFFUSION_API_KEY;
-const DEFAULT_IMAGE_TO_SHOW = `https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif`;
+const DEFAULT_IMAGE_TO_SHOW = home_gif;
 const DEZGO_HOST_URL = `https://dezgo.p.rapidapi.com/text2image`;
 const DEFAULT_SEARCH_TEXT = `an astronaut riding a horse, digital art, epic lighting, highly-detailed masterpiece trending HQ`;
 

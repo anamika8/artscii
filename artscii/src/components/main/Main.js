@@ -1,14 +1,15 @@
 import './Main.css';
+import DisplayManager from '../displayManager/DisplayManager';
 import loading_gif from '../../assets/loading.gif';
-import Player from '../player/Player';
+import home_gif from '../../assets/home.gif'
 import { useState } from 'react';
 import { getStableDiffusionImageBySearchText } from '../../services/stableDiffusionService';
 
 function Main() {
     const [searchParam, setSearchParam] = useState('');
     const [displayText, setDisplayText] = useState('');
-    const [playerMode, setPlayerMode] = useState('image')
-    const [imageUrl, setImageUrl] = useState('https://media.giphy.com/media/fVeAI9dyD5ssIFyOyM/giphy.gif')
+    const [src, setSrc] = useState(home_gif)
+    const [displayMode, setDisplayMode] = useState('image')
     const [loading, setLoading] = useState(false)
 
     const updateTitle = (param) => {
@@ -23,17 +24,12 @@ function Main() {
         e.preventDefault();
     }
 
-    const updatePlayerData = (new_url, new_search, new_playerMode) => {
-        setImageUrl(new_url);
-        setSearchParam(new_search);
-        setPlayerMode(new_playerMode);
-    }
-
     const setApiImage = (searchParam) => {
         getStableDiffusionImageBySearchText(searchParam)
             .then(imageUrl => {
                 console.log(`Image URL received in UI - ${imageUrl}`)
-                setImageUrl(imageUrl)
+                setDisplayMode('image')
+                setSrc(imageUrl)
             })
             .catch(err => {
                 console.log("error encountered = " + err);
@@ -49,9 +45,9 @@ function Main() {
           <h2>Searching for:</h2>
           <h2>{displayText}</h2>
           {loading ? (
-            <Player url={loading_gif} playerMode={playerMode} />
+            <DisplayManager src={loading_gif} search={searchParam} displayMode={displayMode}/>
           ) : (
-            <Player url={imageUrl} search={searchParam} playerMode={playerMode}/>
+            <DisplayManager src={src} search={searchParam} displayMode={displayMode}/>
           )}
           <p>Site under construction.</p>
   
