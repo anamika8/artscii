@@ -1,0 +1,35 @@
+.about-container {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+}
+
+.about-content {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.about-content p:first-of-type::first-letter {
+    font-size: 1.5em;
+}
+
+#info-link {
+    margin-left: 5px;
+    color: hotpink;
+    text-decoration: none;
+}
+
+#info-link:visited {
+    color:salmon;
+}
+
+#info-link:hover {
+    text-decoration: underline;
+}
+
+#info-link:active {
+    color:cadetblue;
+}
