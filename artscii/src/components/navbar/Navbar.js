@@ -1,16 +1,26 @@
 import React from 'react';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return (
         <nav className='navbar'>
             <ul className='navbar-list'>
                 <li className='navbar-item'>
-                    <Link className='navbar-link' to={'/'}>Home</Link>
+                    <NavLink 
+                        className='navbar-link' 
+                        to={'/'}
+                    end>
+                        Home
+                    </NavLink>
                 </li>
                 <li className='navbar-item'>
-                    <Link className='navbar-link' to={'about'}>About</Link>
+                    <NavLink 
+                        className='navbar-link' 
+                        to={'/about'}
+                    >
+                        About
+                    </NavLink>
                 </li>
                 <li className='navbar-item'>
                     <a className='navbar-link' href='https://github.com/elizasohn/artscii'>GitHub</a>

@@ -1,20 +1,25 @@
 .navbar {
     display: flex;
     justify-content: center;
-  }
+}
   
 .navbar-list {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
-  }
+}
   
 .navbar-item {
     margin: 0 10px;
-  }
+}
   
 .navbar-link {
     text-decoration: none;
     color: white;
-  }
+}
+
+.active {
+    text-decoration: underline;
+    text-underline-position: from-font;
+}
