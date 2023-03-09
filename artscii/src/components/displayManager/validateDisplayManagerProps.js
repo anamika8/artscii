@@ -1,7 +1,7 @@
 // Function to validate props passed to the Player componeont. Throws errors for Player to catch
+let validModes = ['image', 'ascii']
 
-export function validateDisplayManagerProps (props) {
-    let validModes = ['image', 'ascii']
+function validateDisplayManagerProps (props) {
     if (!props.displayMode){
         throw new Error('No displayMode sent to component!')
     }
@@ -14,3 +14,5 @@ export function validateDisplayManagerProps (props) {
         throw new Error('No src sent to component!')
     }
 }
+
+export {validModes, validateDisplayManagerProps}

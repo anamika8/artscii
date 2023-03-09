@@ -22,7 +22,7 @@ const DisplayManager = (props) => {
                 throw new Error('Unexpected displayMode error');
         }
     } catch(err) {
-        console.error("display Error: " + err);
+        console.error("DisplayManager: " + err);
         return(
             <div className='display-window'>
                 <ErrorStateDisplay/>
@@ -33,7 +33,7 @@ const DisplayManager = (props) => {
 
 const ImageDisplay = (props) => {
     return(
-        <div className='player-window'>
+        <div className='player-window' id='image-display-window'>
             <h2 className='title-text'>{props.search}</h2>
             <img src={props.src} alt={props.search} className="image-display"/>
             <button className='ascii-button' onClick={props.asciify}>asciify</button>
@@ -43,7 +43,7 @@ const ImageDisplay = (props) => {
 
 const AsciiDisplay = (props) => {
     return(
-        <div>
+        <div className='player-window' id='ascii-display-window'>
             <pre id='ascii'>{props.preData}</pre>
         </div>
     )
@@ -51,7 +51,7 @@ const AsciiDisplay = (props) => {
 
 const ErrorStateDisplay = () => {
     return(
-        <div className='error-display'>
+        <div className='player-window' id='error-display-window'>
             <h1>Something went wrong! Sorry about that</h1>
         </div>
     )
