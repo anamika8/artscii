@@ -38,3 +38,9 @@ pre {
     white-space: -o-pre-wrap;
     max-width: 617px;
 }
+
+#ascii {
+    background-color: white;
+    color: black;
+    font-weight: 1000;
+}
