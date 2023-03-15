@@ -20,6 +20,7 @@ function Main() {
         setSearchParam('')
     }
     const handleSubmit = (e) => {
+        setDisplayMode('image');
         updateTitle(searchParam)
         setApiImage(searchParam);
         setLoading(true);
