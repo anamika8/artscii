@@ -1,5 +1,7 @@
 import './Main.css';
+import SearchTextTitle from '../searchTextTitle/SearchTextTitle';
 import DisplayManager from '../displayManager/DisplayManager';
+import AsciifyButton from '../asciifyButton/AsciifyButton';
 import loading_gif from '../../assets/loading.gif';
 import home_gif from '../../assets/home.gif'
 import { useState, useRef } from 'react';
@@ -14,6 +16,7 @@ function Main() {
     const [displayMode, setDisplayMode] = useState('image')
     const [loading, setLoading] = useState(false)
 	const [preData, setPreData] = useState('');
+    const [searchActive, setSearchActive] = useState(false);
 
     const updateTitle = (param) => {
         setDisplayText(param)
@@ -56,6 +59,7 @@ function Main() {
             })
             .finally(() => {
                 setLoading(false);
+                setSearchActive(true);
             });
     }
 
@@ -66,19 +70,20 @@ function Main() {
         const pre = drawAscii(grayScales, width);   
         setPreData(pre); 
         setDisplayMode('ascii');
+        setSearchActive(false);
     }
 
   return (
       <div className='main'>	
-          <h2>Searching for:</h2>
-          <h2>{displayText}</h2>
+          <SearchTextTitle displayText={displayText}/>
           {loading ? (
             <DisplayManager src={loading_gif} search={searchParam} displayMode={displayMode}/>
           ) : (
-            <DisplayManager src={src} search={searchParam} displayMode={displayMode} asciify={asciify} preData={preData}/>
+            <DisplayManager src={src} search={searchParam} displayMode={displayMode} preData={preData}/>
           )}
           <p>Site under construction.</p>
 
+          <AsciifyButton searchActive={searchActive} asciify={asciify}/>
           <div className='input-form'>
               <form onSubmit={e => handleSubmit(e)}>
                   <input 

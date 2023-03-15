@@ -9,7 +9,7 @@ const DisplayManager = (props) => {
             case 'image':
                 return(
                     <div className='display-window'>
-                        <ImageDisplay src={props.src} search={props.search} asciify={props.asciify} setDisplayMode={props.setDisplayMode}/>
+                        <ImageDisplay src={props.src} search={props.search} setDisplayMode={props.setDisplayMode}/>
                     </div>
                 );
             case 'ascii':
@@ -36,7 +36,6 @@ const ImageDisplay = (props) => {
         <div className='player-window' id='image-display-window'>
             <h2 className='title-text'>{props.search}</h2>
             <img src={props.src} alt={props.search} className="image-display"/>
-            <button className='ascii-button' onClick={props.asciify}>asciify</button>
         </div>
     )
 }
