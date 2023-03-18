@@ -20,6 +20,13 @@
     height: var(--content-height);
 }
 
+.loading-display {
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+    margin: 156px;
+}
+
 .title-text {
     display: none
 }
@@ -38,5 +45,5 @@ pre {
 #ascii {
     background-color: white;
     color: black;
-    font-weight: 1000;
+    font-weight: 900;
 }

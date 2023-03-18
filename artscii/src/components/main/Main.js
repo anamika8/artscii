@@ -2,7 +2,7 @@ import './Main.css';
 import SearchTextTitle from '../searchTextTitle/SearchTextTitle';
 import DisplayManager from '../displayManager/DisplayManager';
 import AsciifyButton from '../asciifyButton/AsciifyButton';
-import loading_gif from '../../assets/loading.gif';
+import loading_gif from '../../assets/loading-spinner.gif';
 import home_gif from '../../assets/home.gif'
 import { useState, useRef } from 'react';
 import { getStableDiffusionImageBySearchText } from '../../services/stableDiffusionService';
@@ -14,7 +14,6 @@ function Main() {
     const [displayText, setDisplayText] = useState('');
     const [src, setSrc] = useState(home_gif);
     const [displayMode, setDisplayMode] = useState('image')
-    const [loading, setLoading] = useState(false)
 	const [preData, setPreData] = useState('');
     const [searchActive, setSearchActive] = useState(false);
 
@@ -23,10 +22,11 @@ function Main() {
         setSearchParam('')
     }
     const handleSubmit = (e) => {
-        setDisplayMode('image');
+        setDisplayMode('loading');
+        setSearchActive(false);
+        setSrc(loading_gif);
         updateTitle(searchParam)
         setApiImage(searchParam);
-        setLoading(true);
         e.preventDefault();
     }
 
@@ -58,7 +58,6 @@ function Main() {
                 console.log("error encountered = " + err);
             })
             .finally(() => {
-                setLoading(false);
                 setSearchActive(true);
             });
     }
@@ -76,12 +75,7 @@ function Main() {
   return (
       <div className='main'>	
           <SearchTextTitle displayText={displayText}/>
-          {loading ? (
-            <DisplayManager src={loading_gif} search={searchParam} displayMode={displayMode}/>
-          ) : (
-            <DisplayManager src={src} search={searchParam} displayMode={displayMode} preData={preData}/>
-          )}
-          <p>Site under construction.</p>
+          <DisplayManager src={src} search={searchParam} displayMode={displayMode} preData={preData}/>
 
           <AsciifyButton searchActive={searchActive} asciify={asciify}/>
           <div className='input-form'>
