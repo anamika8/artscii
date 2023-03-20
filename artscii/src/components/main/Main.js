@@ -31,8 +31,8 @@ function Main() {
     }
 
 	const canvas = useRef();
-    let width = 256;
-    let height = 128;
+    let width = 128;
+    let height = 64;
 	let image;
 
 	const loadImageToCanvas = (imageUrl) => {
