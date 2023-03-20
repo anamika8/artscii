@@ -39,11 +39,15 @@ pre {
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
     white-space: -o-pre-wrap;
-    max-width: 617px;
+    max-width: 512px;
 }
 
 #ascii {
-    background-color: white;
+    background-color: ghostwhite;
     color: black;
-    font-weight: 900;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(100,100,100,0.5);
+    letter-spacing: -0.1em;
+    
 }
+
