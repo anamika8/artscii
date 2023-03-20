@@ -18,3 +18,16 @@ h2 {
     position: absolute;
     top: -500px;
 }
+
+.search-text-container {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0 2em;
+}
+
+#search-text-label {
+    margin: 0;
+}
+#search-text {
+    margin: 0 0 0 1rem;
+}

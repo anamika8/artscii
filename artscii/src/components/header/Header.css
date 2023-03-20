@@ -1,0 +1,9 @@
+.header {
+    display: flex;
+    margin: 0 3em .5em;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 8px;
+}

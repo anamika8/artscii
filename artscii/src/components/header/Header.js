@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../navbar/Navbar';
 import Title from '../title/Title';
+import './Header.css';
 
 const art = [
     ' █████╗ ██████╗ ████████╗███████╗ ██████╗██╗██╗',
