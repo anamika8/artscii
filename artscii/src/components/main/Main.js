@@ -2,6 +2,7 @@ import './Main.css';
 import SearchTextTitle from '../searchTextTitle/SearchTextTitle';
 import DisplayManager from '../displayManager/DisplayManager';
 import AsciifyButton from '../asciifyButton/AsciifyButton';
+import Input from '../input/Input';
 import loading_gif from '../../assets/loading-spinner.gif';
 import home_gif from '../../assets/home.gif'
 import { useState, useRef } from 'react';
@@ -76,23 +77,8 @@ function Main() {
       <div className='main'>	
           <SearchTextTitle displayText={displayText}/>
           <DisplayManager src={src} search={searchParam} displayMode={displayMode} preData={preData}/>
-
           <AsciifyButton searchActive={searchActive} asciify={asciify}/>
-          <div className='input-form'>
-              <form onSubmit={e => handleSubmit(e)}>
-                  <input 
-                      className='search-input'
-                      type='text'
-                      value={searchParam}
-                      placeholder="Enter a search term"
-                      onChange={e => setSearchParam(e.target.value)}
-                  />
-                  <input 
-                      type='submit'
-                      value='Submit'
-                  />
-              </form>
-          </div>
+          <Input handleSubmit={handleSubmit} searchParam={searchParam} setSearchParam={setSearchParam}/>
 		  <canvas 
 				className='canvas'
 			  	ref={canvas}
