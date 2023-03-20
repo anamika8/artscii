@@ -1,5 +1,5 @@
 // Function to validate props passed to the Player componeont. Throws errors for Player to catch
-let validModes = ['image', 'ascii', 'loading']
+let validModes = ['image', 'ascii', 'loading', 'waiting']
 
 function validateDisplayManagerProps (props) {
     if (!props.displayMode){
@@ -10,7 +10,7 @@ function validateDisplayManagerProps (props) {
         throw new Error('Invalid Display Type');
     }
 
-    if (!props.src) {
+    if (!props.src && props.displayMode !== 'waiting') {
         throw new Error('No src sent to component!')
     }
 }

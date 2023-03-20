@@ -4,7 +4,6 @@ import DisplayManager from '../displayManager/DisplayManager';
 import AsciifyButton from '../asciifyButton/AsciifyButton';
 import Input from '../input/Input';
 import loading_gif from '../../assets/loading-spinner.gif';
-import home_gif from '../../assets/home.gif'
 import { useState, useRef } from 'react';
 import { getStableDiffusionImageBySearchText } from '../../services/stableDiffusionService';
 import convertToGrayScales from '../../services/convertToGrayScales';
@@ -13,9 +12,9 @@ import drawAscii from '../../services/drawAscii';
 function Main() {
     const [searchParam, setSearchParam] = useState('');
     const [displayText, setDisplayText] = useState('');
-    const [src, setSrc] = useState(home_gif);
-    const [displayMode, setDisplayMode] = useState('image')
-	const [preData, setPreData] = useState('');
+    const [src, setSrc] = useState('');
+    const [displayMode, setDisplayMode] = useState('waiting')
+    const [preData, setPreData] = useState('');
     const [searchActive, setSearchActive] = useState(false);
 
     const updateTitle = (param) => {
@@ -50,7 +49,6 @@ function Main() {
     const setApiImage = (searchParam) => {
         getStableDiffusionImageBySearchText(searchParam)
             .then(imageUrl => {
-                console.log(`Image URL received in UI - ${imageUrl}`)
                 setDisplayMode('image')
                 setSrc(imageUrl)
 				loadImageToCanvas(imageUrl);

@@ -24,6 +24,12 @@ const DisplayManager = (props) => {
                         <LoadingDisplay src={props.src}/>
                     </div>
                 )
+            case 'waiting':
+                return(
+                    <div className='display-window'>
+                        <WaitingDisplay/>
+                    </div>
+                )
             default:
                 throw new Error('Unexpected displayMode error');
         }
@@ -66,6 +72,14 @@ const LoadingDisplay = (props) => {
     return(
         <div className='player-window' id='loading-display-window'>
             <img src={props.src} alt='loading' className='loading-display'/>
+        </div>
+    )
+}
+
+const WaitingDisplay = () => {
+    return(
+        <div className='player-window' id='waiting-display-window'>
+            <p>Submit a search below to get started!</p>
         </div>
     )
 }
