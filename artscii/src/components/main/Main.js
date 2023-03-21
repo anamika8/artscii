@@ -22,11 +22,13 @@ function Main() {
         setSearchParam('')
     }
     const handleSubmit = (e) => {
-        setDisplayMode('loading');
-        setSearchActive(false);
-        setSrc(loading_gif);
+        if (!launchEasterEgg(searchParam)) {
+            setDisplayMode('loading');
+            setSearchActive(false);
+            setSrc(loading_gif);
+            setApiImage(searchParam);
+        }
         updateTitle(searchParam)
-        setApiImage(searchParam);
         e.preventDefault();
     }
 
@@ -69,6 +71,14 @@ function Main() {
         setPreData(pre); 
         setDisplayMode('ascii');
         setSearchActive(false);
+    }
+    
+    const launchEasterEgg = (text) => {
+        if (text === '!pacman!') {
+            setDisplayMode('easter');
+            return true;
+        }
+        return false;
     }
 
   return (

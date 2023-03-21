@@ -30,6 +30,10 @@ const DisplayManager = (props) => {
                         <WaitingDisplay/>
                     </div>
                 )
+            case 'easter':
+                return(
+                    <iframe className='easter' title='Pacman' src='https://dos.zone/player/?bundleUrl=https%3A%2F%2Fcdn.dos.zone%2Foriginal%2F2X%2F5%2F5cdcffbf268b3be0555025902b52a8d21ad595b9.jsdos?anonymous=1'/>
+                )
             default:
                 throw new Error('Unexpected displayMode error');
         }
