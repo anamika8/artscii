@@ -1,13 +1,16 @@
 import './Main.css';
-import SearchTextTitle from '../searchTextTitle/SearchTextTitle';
-import DisplayManager from '../displayManager/DisplayManager';
-import AsciifyButton from '../asciifyButton/AsciifyButton';
-import Input from '../input/Input';
-import loading_gif from '../../assets/loading-spinner.gif';
 import { useState, useRef } from 'react';
-import { getStableDiffusionImageBySearchText } from '../../services/stableDiffusionService';
-import convertToGrayScales from '../../services/convertToGrayScales';
-import drawAscii from '../../services/drawAscii';
+import loading_gif from '../../assets/loading-spinner.gif';
+import {
+    SearchTextTitle,
+    DisplayManager,
+    AsciifyButton,
+    Input
+} from '../components';
+import { 
+    convertToGrayScales, getStableDiffusionImageBySearchText, 
+    drawAscii 
+} from '../../services/services';
 
 function Main() {
     const [searchParam, setSearchParam] = useState('');

@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import DisplayManager from '../components/displayManager/DisplayManager'
+import { DisplayManager } from '../components/components';
 
 // Mocking validateDisplayManagerProps as that is not the SUT
 jest.mock('../components/displayManager/validateDisplayManagerProps', () => ({ validateDisplayManagerProps: jest.fn() }))

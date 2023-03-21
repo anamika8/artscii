@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, fireEvent} from '@testing-library/react';
-import AsciifyButton from '../components/asciifyButton/AsciifyButton';
+import { AsciifyButton } from '../components/components';
 
 describe('AsciifyButton', () => {
     test('renders button when search is active', () => {

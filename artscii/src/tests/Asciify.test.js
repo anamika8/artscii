@@ -1,7 +1,9 @@
 import { expect } from '@jest/globals';
-import convertToGrayScales from '../services/convertToGrayScales';
+import { 
+    convertToGrayScales, 
+    drawAscii 
+} from '../services/services';
 import dummyImgSrc from './dummyImgSrc';
-import drawAscii from '../services/drawAscii';
 
 const image = new Image();
 image.src = dummyImgSrc;

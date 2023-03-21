@@ -1,5 +1,5 @@
 import './About.css'
-import Title from '../title/Title'
+import { Title } from '../components'
 
 function About() {
     return (

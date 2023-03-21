@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, screen} from '@testing-library/react';
-import SearchTextTitle from '../components/searchTextTitle/SearchTextTitle';
+import { SearchTextTitle } from '../components/components';
 
 describe('SearchTextTitle', () => {
     test('renders search text label and value', () => {

@@ -1,6 +1,5 @@
 import React from 'react';
-import Navbar from '../navbar/Navbar';
-import Title from '../title/Title';
+import { Navbar, Title } from '../components';
 import './Header.css';
 
 const art = [
