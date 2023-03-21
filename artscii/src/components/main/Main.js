@@ -12,6 +12,8 @@ import {
     drawAscii 
 } from '../../services/services';
 
+import DownloadButton from '../downloadButton/DownloadButton';
+
 function Main() {
     const [searchParam, setSearchParam] = useState('');
     const [displayText, setDisplayText] = useState('');
@@ -89,6 +91,7 @@ function Main() {
           <SearchTextTitle displayText={displayText}/>
           <DisplayManager src={src} search={searchParam} displayMode={displayMode} preData={preData}/>
           <AsciifyButton searchActive={searchActive} asciify={asciify}/>
+          <DownloadButton displayMode={displayMode} />
           <Input handleSubmit={handleSubmit} searchParam={searchParam} setSearchParam={setSearchParam}/>
 		  <canvas 
 				className='canvas'

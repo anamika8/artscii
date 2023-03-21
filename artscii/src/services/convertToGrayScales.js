@@ -1,3 +1,6 @@
+// the following function is taken from https://marmelab.com/blog/2018/02/20/convert-image-to-ascii-art-masterpiece.html
+// which uses https://en.wikipedia.org/wiki/Grayscale to compute a formula for extracting grayscale from RGB values
+
 const convertToGrayScales = (context, imageData) => {
     const toGrayScale = (r, g, b) => 0.21 * r + 0.72 * g + 0.07 * b;
     const grayScales = [];
